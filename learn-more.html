@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BECRWY11LN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BECRWY11LN');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn More — R11 Handheld Fan | YOYOS DEVICES</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   YOYOS DEVICES — R11 Handheld Fan
+   Design tokens
+   ========================================================================== */
+:root {
+  /* Color */
+  --bg:            #F5FBFC;   /* icy white */
+  --bg-alt:        #E7F6F8;   /* pale cyan panel */
+  --bg-deep:       #0B4F6C;   /* deep teal-navy */
+  --ink:           #08262C;   /* near-black teal for text */
+  --ink-soft:      #4A6B72;   /* muted body text */
+  --cyan:          #00B4D8;   /* primary accent */
+  --mint:          #9FEFE3;   /* light accent / highlight */
+  --cta:           #FF6B4A;   /* coral — contrast CTA */
+  --cta-dark:      #E0512F;
+  --line:          #CFE9EC;
+  --white:         #FFFFFF;
+
+  /* Type */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body:    'Inter', 'Segoe UI', sans-serif;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Scale */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 2px 10px rgba(11,79,108,0.08);
+  --shadow-md: 0 12px 32px rgba(11,79,108,0.14);
+  --container: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  color: var(--bg-deep);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 16px 30px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:focus-visible { outline: 3px solid var(--bg-deep); outline-offset: 3px; }
+
+.btn-cta {
+  background: var(--cta);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.btn-cta:hover { background: var(--cta-dark); transform: translateY(-2px); }
+.btn-cta:active { transform: translateY(0); }
+
+.btn-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.5);
+}
+.btn-cta:active::after { animation: ripple 0.5s ease-out; }
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+  100% { box-shadow: 0 0 0 24px rgba(255,255,255,0); }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--bg-deep);
+  border: 1.5px solid var(--line);
+  padding: 14px 26px;
+}
+.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.btn-block { width: 100%; }
+
+/* ---- Nav ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(245,251,252,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bg-deep);
+}
+.nav-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+/* brand wordmark: single solid color, no split */
+.nav-links { display: flex; align-items: center; gap: 22px; font-size: 0.92rem; font-weight: 500; }
+.nav-links a.muted { color: var(--ink-soft); }
+.nav-links a.muted:hover { color: var(--cyan); }
+.nav-cta {
+  background: var(--bg-deep);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+.nav-cta:hover { background: var(--cyan); }
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  padding: 48px 0 40px;
+  text-align: center;
+}
+.hero .container { max-width: 760px; }
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  margin-bottom: 18px;
+}
+
+.hero-sub {
+  font-size: 1.08rem;
+  max-width: 46ch;
+  margin: 0 auto 28px;
+}
+
+/* ---- Section shell ---- */
+section { padding: 64px 0; }
+.section-head { max-width: 640px; margin: 0 auto 36px; text-align: center; }
+.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 10px; }
+.section-head p { font-size: 1rem; }
+.alt { background: var(--bg-alt); }
+
+/* ---- Final CTA ---- */
+.final-cta { text-align: center; padding: 70px 0 90px; }
+
+/* ---- Footer ---- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 100px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.site-footer a { color: var(--bg-deep); font-weight: 600; }
+
+/* ---- Learn More page additions ---- */
+.lm-section { max-width: 760px; }
+.lm-lead { font-size: 1.02rem; max-width: 62ch; margin-bottom: 14px; }
+
+.color-strip {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.color-strip img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.5s cubic-bezier(0.34,1.56,0.64,1), transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.spec-grid.in-view .spec-item { opacity: 1; transform: translateY(0) scale(1); }
+.spec-grid.in-view .spec-item:nth-child(1) { transition-delay: 0.05s; }
+.spec-grid.in-view .spec-item:nth-child(2) { transition-delay: 0.15s; }
+.spec-grid.in-view .spec-item:nth-child(3) { transition-delay: 0.25s; }
+.spec-grid.in-view .spec-item:nth-child(4) { transition-delay: 0.35s; }
+.spec-grid.in-view .spec-item:nth-child(5) { transition-delay: 0.45s; }
+.spec-grid.in-view .spec-item:nth-child(6) { transition-delay: 0.55s; }
+.spec-item .spec-label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan); }
+.spec-item .spec-value { font-family: var(--font-display); font-weight: 600; color: var(--bg-deep); font-size: 1rem; }
+.spec-note { margin-top: 18px; font-size: 0.82rem; color: var(--ink-soft); }
+
+.box-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.box-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.95rem; color: var(--ink); }
+.box-list svg { width: 18px; height: 18px; color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
+.box-note { margin-top: 14px; font-size: 0.82rem; color: var(--ink-soft); }
+
+.care-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.care-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.95rem; color: var(--ink); }
+.care-list .care-icon { flex-shrink: 0; font-size: 1.05rem; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(0.97);
+  transition: opacity 0.55s cubic-bezier(0.34,1.56,0.64,1), transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0) scale(1); }
+
+/* video sized for 9:16 vertical, matches the main product page's demo section */
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9/16;
+  margin: 20px auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.video-embed iframe, .video-embed video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+
+.img-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9/16;
+  margin: 20px auto 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--white), var(--bg-alt));
+  border: 1.5px dashed var(--cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+}
+.img-placeholder svg { width: 40px; height: 40px; color: var(--cyan); }
+.img-placeholder .ph-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--bg-deep); }
+.img-placeholder .ph-path { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); opacity: 0.75; }
+
+@media (max-width: 640px) {
+  .spec-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-logo" aria-hidden="true"><img src="images/logo.png" alt="" width="34" height="34" decoding="async"></span>
+      YOYOS <span>DEVICES</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#order" class="nav-cta">Order Now</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container" style="display:block; max-width:760px;">
+    <span class="eyebrow">Full product guide</span>
+    <h1>Everything About the R11 Handheld Fan</h1>
+    <p class="hero-sub" style="margin-top:14px;">
+      Real specs, a demo walkthrough, and tips to get the most out of yours.
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="container lm-section">
+    <div class="section-head reveal" style="text-align:left; margin:0 0 8px;">
+      <h2>About This Fan</h2>
+    </div>
+    <p class="lm-lead">The R11 Handheld Fan is a compact, rechargeable fan built for quick, strong airflow wherever you need to cool down. A quick double-click on the side button turns it on; double-click again to switch it off.</p>
+    <p class="lm-lead">It's light enough to carry in one hand — for your desk, your bag, or on the move — and comes with a digital display so you can see your speed setting at a glance.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container lm-section">
+    <div class="section-head reveal" style="text-align:left; margin:0 0 8px;">
+      <h2>Available Colors</h2>
+      <p>Comes in two finishes.</p>
+    </div>
+    <div class="color-strip reveal">
+      <img src="images/r11-colors.webp" alt="R11 Handheld Fan in purple/black and rose-gold/cream finishes" width="420" height="323" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container lm-section">
+    <div class="section-head reveal" style="text-align:left; margin:0 0 8px;">
+      <h2>Full Specifications</h2>
+      <p>What we can confirm about the R11.</p>
+    </div>
+    <div class="spec-grid" id="spec-grid">
+      <div class="spec-item"><span class="spec-label">Model</span><span class="spec-value">R11 Handheld Fan</span></div>
+      <div class="spec-item"><span class="spec-label">Weight</span><span class="spec-value">Approx. 0.2 kg</span></div>
+      <div class="spec-item"><span class="spec-label">Power Control</span><span class="spec-value">Quick double-click on/off</span></div>
+      <div class="spec-item"><span class="spec-label">Speed Display</span><span class="spec-value">Digital on-device display</span></div>
+      <div class="spec-item"><span class="spec-label">Colors Available</span><span class="spec-value">Purple/Black, Rose Gold/Cream</span></div>
+      <div class="spec-item"><span class="spec-label">Design</span><span class="spec-value">Handheld, rechargeable</span></div>
+    </div>
+    <p class="spec-note">Battery capacity, charging port, motor speed (RPM) and runtime are not officially published by the seller — we'll update this page as soon as they're confirmed. Rated fan-only (no water or mist function).</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container lm-section">
+    <div class="section-head reveal" style="text-align:left; margin:0 0 8px;">
+      <h2>What's in the Box</h2>
+    </div>
+    <ul class="box-list reveal">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 1 × R11 Handheld Fan</li>
+    </ul>
+    <p class="box-note">Full box contents (e.g. charging cable) to be confirmed and updated here.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container lm-section">
+    <div class="section-head reveal" style="text-align:left; margin:0 0 8px;">
+      <h2>Watch: How to Use It</h2>
+      <p>A quick walkthrough — double-click on, pick a speed, double-click off.</p>
+    </div>
+    <!-- When the demo video is ready, replace this placeholder with:
+         <div class="video-embed">
+           <video src="videos/demo.mp4" controls playsinline></video>
+         </div>
+         or a YouTube embed, same as on index.html -->
+    <div class="img-placeholder reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <span class="ph-label">Demo video (9:16)</span>
+      <span class="ph-path">coming soon</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container lm-section">
+    <div class="section-head reveal" style="text-align:left; margin:0 0 8px;">
+      <h2>Care Tips</h2>
+    </div>
+    <ul class="care-list reveal">
+      <li><span class="care-icon">🔋</span> Charge fully before first use for the best battery life.</li>
+      <li><span class="care-icon">🚫</span> Never submerge the fan body in water.</li>
+      <li><span class="care-icon">🧒</span> Keep away from young children while the fan is running.</li>
+      <li><span class="care-icon">☀️</span> Store in a cool, dry place out of direct sunlight.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <a href="index.html#order" class="btn btn-cta">Order Now</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>YOYOS DEVICES &middot; <a href="index.html">Back to product page</a></p></div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    items.forEach(el => observer.observe(el));
+
+    const specGrid = document.getElementById("spec-grid");
+    if (specGrid) {
+      const specObserver = new IntersectionObserver(
+        entries => entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            specObserver.unobserve(entry.target);
+          }
+        }),
+        { threshold: 0.15, rootMargin: "0px 0px -30px 0px" }
+      );
+      specObserver.observe(specGrid);
+    }
+  } else {
+    items.forEach(el => el.classList.add("in-view"));
+    document.getElementById("spec-grid")?.classList.add("in-view");
+  }
+});
+</script>
+</body>
+</html>
