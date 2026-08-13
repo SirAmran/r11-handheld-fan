@@ -20,9 +20,7 @@
 >
 
 <meta name="googlebot" content="index, follow">
-
 <meta name="author" content="YOYOS DEVICES">
-
 <meta name="theme-color" content="#0B4F6C">
 
 <!-- Canonical URL -->
@@ -98,44 +96,61 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
 <style>
+
 /* ==========================================================================
    YOYOS DEVICES — R11 Handheld Fan
    Design tokens
    ========================================================================== */
+
 :root {
-  /* Color */
-  --bg:            #F5FBFC;   /* icy white */
-  --bg-alt:        #E7F6F8;   /* pale cyan panel */
-  --bg-deep:       #0B4F6C;   /* deep teal-navy */
-  --ink:           #08262C;   /* near-black teal for text */
-  --ink-soft:      #4A6B72;   /* muted body text */
-  --cyan:          #00B4D8;   /* primary accent */
-  --mint:          #9FEFE3;   /* light accent / highlight */
-  --cta:           #FF6B4A;   /* coral — contrast CTA */
+  --bg:            #F5FBFC;
+  --bg-alt:        #E7F6F8;
+  --bg-deep:       #0B4F6C;
+  --ink:           #08262C;
+  --ink-soft:      #4A6B72;
+  --cyan:          #00B4D8;
+  --mint:          #9FEFE3;
+  --cta:           #FF6B4A;
   --cta-dark:      #E0512F;
   --line:          #CFE9EC;
   --white:         #FFFFFF;
 
-  /* Type */
   --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body:    'Inter', 'Segoe UI', sans-serif;
   --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
 
-  /* Scale */
   --radius-sm: 10px;
   --radius-md: 18px;
   --radius-lg: 28px;
+
   --shadow-sm: 0 2px 10px rgba(11,79,108,0.08);
   --shadow-md: 0 12px 32px rgba(11,79,108,0.14);
+
   --container: 1180px;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 body {
@@ -147,7 +162,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, .display {
+h1,
+h2,
+h3,
+.display {
   font-family: var(--font-display);
   color: var(--bg-deep);
   line-height: 1.05;
@@ -155,7 +173,11 @@ h1, h2, h3, .display {
   letter-spacing: -0.01em;
 }
 
-p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
+p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
 
 .seo-context {
   margin-top: 8px;
@@ -163,41 +185,88 @@ p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
   color: var(--ink-soft);
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-.container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-/* ---- Scroll-reveal + entrance animations ----
-   Bigger, bouncier "fanned into place" reveal — like cards or cash
-   being dealt/spread, not a subtle fade. */
+/* ---- Scroll reveal ---- */
+
 .reveal {
   opacity: 0;
   transform: translateY(20px) scale(0.97);
-  transition: opacity 0.55s cubic-bezier(0.34,1.56,0.64,1), transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
+  transition:
+    opacity 0.55s cubic-bezier(0.34,1.56,0.64,1),
+    transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
 }
-.reveal.in-view { opacity: 1; transform: translateY(0) scale(1); }
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 .hero .container > * {
   opacity: 0;
   transform: translateY(30px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.34,1.56,0.64,1), transform 0.8s cubic-bezier(0.34,1.56,0.64,1);
+  transition:
+    opacity 0.8s cubic-bezier(0.34,1.56,0.64,1),
+    transform 0.8s cubic-bezier(0.34,1.56,0.64,1);
 }
-.hero .container.in-view > * { opacity: 1; transform: translateY(0) scale(1); }
-.hero .container.in-view > *:nth-child(1) { transition-delay: 0.03s; }
-.hero .container.in-view > *:nth-child(2) { transition-delay: 0.14s; }
-.hero .container.in-view > *:nth-child(3) { transition-delay: 0.25s; }
-.hero .container.in-view > *:nth-child(4) { transition-delay: 0.36s; }
-.hero .container.in-view > *:nth-child(5) { transition-delay: 0.47s; }
-.hero .container.in-view > *:nth-child(6) { transition-delay: 0.58s; }
+
+.hero .container.in-view > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero .container.in-view > *:nth-child(1) {
+  transition-delay: 0.03s;
+}
+
+.hero .container.in-view > *:nth-child(2) {
+  transition-delay: 0.14s;
+}
+
+.hero .container.in-view > *:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.hero .container.in-view > *:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+.hero .container.in-view > *:nth-child(5) {
+  transition-delay: 0.47s;
+}
+
+.hero .container.in-view > *:nth-child(6) {
+  transition-delay: 0.58s;
+}
 
 @keyframes gentleFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.hero-stage .img-placeholder, .hero-stage .hero-photo { animation: gentleFloat 5s ease-in-out infinite; }
+  0%, 100% {
+    transform: translateY(0);
+  }
 
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-stage .img-placeholder,
+.hero-stage .hero-photo {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
 
 .eyebrow {
   font-family: var(--font-mono);
@@ -210,6 +279,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---- Buttons ---- */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -222,9 +292,16 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
 }
-.btn:focus-visible { outline: 3px solid var(--bg-deep); outline-offset: 3px; }
+
+.btn:focus-visible {
+  outline: 3px solid var(--bg-deep);
+  outline-offset: 3px;
+}
 
 .btn-cta {
   background: var(--cta);
@@ -233,10 +310,16 @@ img { max-width: 100%; display: block; }
   position: relative;
   overflow: hidden;
 }
-.btn-cta:hover { background: var(--cta-dark); transform: translateY(-2px); }
-.btn-cta:active { transform: translateY(0); }
 
-/* ripple signature on CTA */
+.btn-cta:hover {
+  background: var(--cta-dark);
+  transform: translateY(-2px);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
 .btn-cta::after {
   content: "";
   position: absolute;
@@ -244,10 +327,19 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   box-shadow: 0 0 0 0 rgba(255,255,255,0.5);
 }
-.btn-cta:active::after { animation: ripple 0.5s ease-out; }
+
+.btn-cta:active::after {
+  animation: ripple 0.5s ease-out;
+}
+
 @keyframes ripple {
-  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
-  100% { box-shadow: 0 0 0 24px rgba(255,255,255,0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 0 24px rgba(255,255,255,0);
+  }
 }
 
 .btn-ghost {
@@ -256,11 +348,18 @@ img { max-width: 100%; display: block; }
   border: 1.5px solid var(--line);
   padding: 14px 26px;
 }
-.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
 
-.btn-block { width: 100%; }
+.btn-ghost:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.btn-block {
+  width: 100%;
+}
 
 /* ---- Nav ---- */
+
 .nav {
   position: sticky;
   top: 0;
@@ -269,12 +368,14 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
+
 .nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 68px;
 }
+
 .nav-brand {
   display: flex;
   align-items: center;
@@ -285,7 +386,11 @@ img { max-width: 100%; display: block; }
   color: var(--bg-deep);
   transition: opacity 0.2s ease;
 }
-.nav-brand:hover { opacity: 0.8; }
+
+.nav-brand:hover {
+  opacity: 0.8;
+}
+
 .nav-logo {
   width: 34px;
   height: 34px;
@@ -296,11 +401,29 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   flex-shrink: 0;
 }
-.nav-logo img { width: 100%; height: 100%; object-fit: cover; }
-/* brand wordmark: single solid color, no split */
-.nav-links { display: flex; align-items: center; gap: 22px; font-size: 0.92rem; font-weight: 500; }
-.nav-links a.muted { color: var(--ink-soft); }
-.nav-links a.muted:hover { color: var(--cyan); }
+
+.nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.nav-links a.muted {
+  color: var(--ink-soft);
+}
+
+.nav-links a.muted:hover {
+  color: var(--cyan);
+}
+
 .nav-cta {
   background: var(--bg-deep);
   color: var(--white);
@@ -309,15 +432,22 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   font-size: 0.88rem;
 }
-.nav-cta:hover { background: var(--cyan); }
 
-/* ---- Hero (centered, matches Type 928 page layout) ---- */
+.nav-cta:hover {
+  background: var(--cyan);
+}
+
+/* ---- Hero ---- */
+
 .hero {
   position: relative;
   padding: 48px 0 40px;
   text-align: center;
 }
-.hero .container { max-width: 760px; }
+
+.hero .container {
+  max-width: 760px;
+}
 
 .hero-pill {
   display: inline-flex;
@@ -336,7 +466,11 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2rem, 6vw, 2.9rem);
   margin-bottom: 18px;
 }
-.hero h1 .accent { color: var(--cta); display: block; }
+
+.hero h1 .accent {
+  color: var(--cta);
+  display: block;
+}
 
 .hero-sub {
   font-size: 1.08rem;
@@ -351,6 +485,7 @@ img { max-width: 100%; display: block; }
   gap: 12px;
   margin-bottom: 30px;
 }
+
 .badge {
   display: flex;
   align-items: center;
@@ -362,7 +497,13 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-sm);
   padding: 14px 20px;
 }
-.badge svg { width: 18px; height: 18px; color: var(--cyan); flex-shrink: 0; }
+
+.badge svg {
+  width: 18px;
+  height: 18px;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
 
 .pod-pill {
   display: inline-flex;
@@ -377,14 +518,47 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   margin-bottom: 20px;
 }
-.pod-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); animation: pulse 1.8s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
 
-.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
-.learn-link { font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 6px; }
-.learn-link:hover { color: var(--cyan); }
+.pod-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  animation: pulse 1.8s infinite;
+}
 
-/* hero image stage — centered below CTAs */
+@keyframes pulse {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.learn-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.learn-link:hover {
+  color: var(--cyan);
+}
+
 .hero-stage {
   position: relative;
   max-width: 420px;
@@ -394,13 +568,19 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
 }
+
 .hero-stage::before {
   content: "";
   position: absolute;
   width: 82%;
   height: 82%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,180,216,0.18), rgba(159,239,227,0.05) 70%);
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,180,216,0.18),
+      rgba(159,239,227,0.05) 70%
+    );
   filter: blur(2px);
 }
 
@@ -422,18 +602,44 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-md);
   padding: 20px;
 }
-.img-placeholder svg { width: 46px; height: 46px; color: var(--cyan); }
-.img-placeholder .ph-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--bg-deep); }
-.img-placeholder .ph-path { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); opacity: 0.75; }
+
+.img-placeholder svg {
+  width: 46px;
+  height: 46px;
+  color: var(--cyan);
+}
+
+.img-placeholder .ph-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--bg-deep);
+}
+
+.img-placeholder .ph-path {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  opacity: 0.75;
+}
 
 .img-placeholder.small {
   aspect-ratio: 4/5;
   border-radius: var(--radius-md);
   padding: 14px;
 }
-.img-placeholder.small svg { width: 30px; height: 30px; }
-.img-placeholder.square { aspect-ratio: 1/1; }
-.img-placeholder.wide { aspect-ratio: 16/10; }
+
+.img-placeholder.small svg {
+  width: 30px;
+  height: 30px;
+}
+
+.img-placeholder.square {
+  aspect-ratio: 1/1;
+}
+
+.img-placeholder.wide {
+  aspect-ratio: 16/10;
+}
 
 .hero-photo {
   position: relative;
@@ -443,6 +649,7 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
 }
+
 .feature-photo {
   width: 100%;
   height: auto;
@@ -451,52 +658,119 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---- Section shell ---- */
-section { padding: 64px 0; }
-.section-head { max-width: 640px; margin: 0 auto 36px; text-align: center; }
-.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 10px; }
-.section-head p { font-size: 1rem; }
-.alt { background: var(--bg-alt); }
+
+section {
+  padding: 64px 0;
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 10px;
+}
+
+.section-head p {
+  font-size: 1rem;
+}
+
+.alt {
+  background: var(--bg-alt);
+}
 
 /* ---- Benefits ---- */
+
 .benefit-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
+
 .benefit-card {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 24px 20px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
 .benefit-icon {
-  width: 42px; height: 42px;
-  display: flex; align-items: center; justify-content: center;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--bg-alt);
   border-radius: 12px;
   margin-bottom: 14px;
   color: var(--cyan);
 }
-.benefit-icon svg { width: 22px; height: 22px; }
-.benefit-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
-.benefit-card p { font-size: 0.9rem; }
+
+.benefit-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.benefit-card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+}
 
 /* ---- Use cases ---- */
-.use-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
 .use-card {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--line);
 }
-.use-card .img-placeholder { width: 100%; aspect-ratio: 4/5; border-radius: 0; border: none; background: var(--bg-alt); }
-.use-card .use-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; transition: transform 0.4s ease; }
-.use-card:hover .use-photo { transform: scale(1.04); }
+
+.use-card .img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 0;
+  border: none;
+  background: var(--bg-alt);
+}
+
+.use-card .use-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.use-card:hover .use-photo {
+  transform: scale(1.04);
+}
+
 .use-label {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: linear-gradient(0deg, rgba(11,79,108,0.88), transparent);
   color: var(--white);
   font-family: var(--font-display);
@@ -507,9 +781,26 @@ section { padding: 64px 0; }
 }
 
 /* ---- Demo steps ---- */
-.demo-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.demo-video { display: flex; justify-content: center; }
-.demo-video .img-placeholder { aspect-ratio: 9/16; width: 100%; max-width: 320px; margin: 0 auto; }
+
+.demo-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.demo-video {
+  display: flex;
+  justify-content: center;
+}
+
+.demo-video .img-placeholder {
+  aspect-ratio: 9/16;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 .video-embed {
   position: relative;
   width: 100%;
@@ -520,6 +811,7 @@ section { padding: 64px 0; }
   overflow: hidden;
   box-shadow: var(--shadow-md);
 }
+
 .video-embed iframe {
   position: absolute;
   inset: 0;
@@ -527,7 +819,14 @@ section { padding: 64px 0; }
   height: 100%;
   border: 0;
 }
-.demo-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+
+.demo-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
 .demo-steps li {
   counter-increment: step;
   display: flex;
@@ -535,23 +834,46 @@ section { padding: 64px 0; }
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
-.demo-steps li:last-child { border-bottom: none; }
+
+.demo-steps li:last-child {
+  border-bottom: none;
+}
+
 .demo-steps li::before {
   content: counter(step);
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  width: 30px; height: 30px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--bg-deep);
   color: var(--white);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.demo-steps strong { display: block; color: var(--bg-deep); font-family: var(--font-display); font-size: 0.98rem; }
-.demo-steps span { font-size: 0.88rem; color: var(--ink-soft); }
+
+.demo-steps strong {
+  display: block;
+  color: var(--bg-deep);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+}
+
+.demo-steps span {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
 
 /* ---- Pricing ---- */
-.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .price-card {
   position: relative;
   background: var(--white);
@@ -559,13 +881,27 @@ section { padding: 64px 0; }
   border-radius: var(--radius-lg);
   padding: 30px 24px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
-.price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.price-card.featured { border-color: var(--cyan); box-shadow: var(--shadow-md); }
+
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.price-card.featured {
+  border-color: var(--cyan);
+  box-shadow: var(--shadow-md);
+}
+
 .price-tag {
   position: absolute;
-  top: -13px; left: 50%; transform: translateX(-50%);
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--cta);
   color: var(--white);
   font-family: var(--font-mono);
@@ -574,12 +910,47 @@ section { padding: 64px 0; }
   padding: 5px 14px;
   border-radius: 999px;
 }
-.price-qty { font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); margin-bottom: 10px; letter-spacing: 0.06em; }
-.price-old { font-family: var(--font-mono); color: var(--ink-soft); text-decoration: line-through; font-size: 0.95rem; opacity: 0.7; }
-.price-now { font-family: var(--font-mono); font-weight: 700; font-size: 2rem; color: var(--bg-deep); margin: 4px 0 4px; }
-.price-save { font-size: 0.82rem; color: var(--cta-dark); font-weight: 600; margin-bottom: 18px; }
-.price-note { margin-top: 22px; font-size: 0.82rem; color: var(--ink-soft); }
-.price-note strong { color: var(--bg-deep); }
+
+.price-qty {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--cyan);
+  margin-bottom: 10px;
+  letter-spacing: 0.06em;
+}
+
+.price-old {
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.price-now {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--bg-deep);
+  margin: 4px 0 4px;
+}
+
+.price-save {
+  font-size: 0.82rem;
+  color: var(--cta-dark);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.price-note {
+  margin-top: 22px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.price-note strong {
+  color: var(--bg-deep);
+}
 
 .stock-strip {
   margin: 34px auto 0;
@@ -595,9 +966,11 @@ section { padding: 64px 0; }
 }
 
 /* ---- Order form ---- */
-.container-narrow { max-width: 640px; }
 
-/* ---- Order success panel ---- */
+.container-narrow {
+  max-width: 640px;
+}
+
 .order-success {
   display: none;
   background: var(--white);
@@ -607,8 +980,24 @@ section { padding: 64px 0; }
   box-shadow: var(--shadow-sm);
   text-align: center;
 }
-.order-success.show { display: block; animation: fadeUpIn 0.5s ease; }
-@keyframes fadeUpIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+.order-success.show {
+  display: block;
+  animation: fadeUpIn 0.5s ease;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .success-check {
   display: inline-flex;
   align-items: center;
@@ -620,10 +1009,28 @@ section { padding: 64px 0; }
   color: #0F7A4E;
   margin-bottom: 20px;
 }
-.success-check svg { width: 30px; height: 30px; }
-.order-success h2 { margin-bottom: 12px; }
-.success-sub { font-size: 1.02rem; margin-bottom: 16px; }
-.success-note { font-weight: 700; color: var(--ink); font-size: 1rem; margin-bottom: 26px; }
+
+.success-check svg {
+  width: 30px;
+  height: 30px;
+}
+
+.order-success h2 {
+  margin-bottom: 12px;
+}
+
+.success-sub {
+  font-size: 1.02rem;
+  margin-bottom: 16px;
+}
+
+.success-note {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+  margin-bottom: 26px;
+}
+
 .success-card {
   background: var(--bg-alt);
   border-radius: var(--radius-md);
@@ -631,6 +1038,7 @@ section { padding: 64px 0; }
   margin-bottom: 22px;
   text-align: left;
 }
+
 .success-row {
   display: flex;
   justify-content: space-between;
@@ -640,9 +1048,23 @@ section { padding: 64px 0; }
   border-bottom: 1px solid var(--line);
   font-size: 0.92rem;
 }
-.success-row:last-child { border-bottom: none; }
-.success-row span { color: var(--ink-soft); flex-shrink: 0; }
-.success-row strong { color: var(--ink); text-align: right; font-family: var(--font-mono); font-size: 0.9rem; }
+
+.success-row:last-child {
+  border-bottom: none;
+}
+
+.success-row span {
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.success-row strong {
+  color: var(--ink);
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
 .success-tip {
   display: flex;
   gap: 8px;
@@ -655,8 +1077,15 @@ section { padding: 64px 0; }
   text-align: left;
   margin-bottom: 24px;
 }
-.success-done { background: var(--bg-deep); color: var(--white); }
-.success-done:hover { background: var(--cyan); }
+
+.success-done {
+  background: var(--bg-deep);
+  color: var(--white);
+}
+
+.success-done:hover {
+  background: var(--cyan);
+}
 
 .order-form {
   background: var(--white);
@@ -665,7 +1094,11 @@ section { padding: 64px 0; }
   padding: 30px;
   box-shadow: var(--shadow-sm);
 }
-.field { margin-bottom: 20px; }
+
+.field {
+  margin-bottom: 20px;
+}
+
 .field label {
   display: block;
   font-size: 0.92rem;
@@ -673,8 +1106,14 @@ section { padding: 64px 0; }
   color: var(--ink);
   margin-bottom: 8px;
 }
-.field label .req { color: var(--cta-dark); }
-.field input, .field select, .field textarea {
+
+.field label .req {
+  color: var(--cta-dark);
+}
+
+.field input,
+.field select,
+.field textarea {
   width: 100%;
   font-family: var(--font-body);
   font-size: 0.96rem;
@@ -683,8 +1122,11 @@ section { padding: 64px 0; }
   border: 1.5px solid var(--line);
   background: var(--white);
   color: var(--ink);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
+
 .field select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A6B72' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
@@ -693,13 +1135,25 @@ section { padding: 64px 0; }
   background-size: 18px;
   padding-right: 42px;
 }
-.field input::placeholder, .field textarea::placeholder { color: #9FB4B8; }
-.field input:focus, .field select:focus, .field textarea:focus {
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #9FB4B8;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
   outline: none;
   border-color: var(--cyan);
   box-shadow: 0 0 0 3px rgba(0,180,216,0.14);
 }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
 
 .notice-box {
   display: flex;
@@ -711,9 +1165,21 @@ section { padding: 64px 0; }
   padding: 18px 20px;
   margin-bottom: 18px;
 }
-.notice-box p { font-size: 0.9rem; color: var(--cta-dark); }
-.notice-box strong { color: var(--cta-dark); }
-.notice-icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.4; }
+
+.notice-box p {
+  font-size: 0.9rem;
+  color: var(--cta-dark);
+}
+
+.notice-box strong {
+  color: var(--cta-dark);
+}
+
+.notice-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
 
 .confirm-box {
   display: flex;
@@ -724,9 +1190,16 @@ section { padding: 64px 0; }
   padding: 18px 20px;
   margin-bottom: 22px;
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
 }
-.confirm-box:hover { border-color: var(--cyan); background: var(--bg-alt); }
+
+.confirm-box:hover {
+  border-color: var(--cyan);
+  background: var(--bg-alt);
+}
+
 .confirm-box input {
   width: 20px;
   height: 20px;
@@ -734,19 +1207,66 @@ section { padding: 64px 0; }
   accent-color: var(--cta);
   flex-shrink: 0;
 }
-.confirm-box span { font-size: 0.9rem; color: var(--ink-soft); }
-.confirm-box strong { color: var(--ink); }
 
-.form-status { display: none; margin-top: 14px; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 0.88rem; text-align: center; }
-.form-status.show { display: block; }
-.form-status.success { background: #E7F9F1; color: #0F7A4E; border: 1px solid #BEEBD4; }
-.form-status.error { background: #FDEEEC; color: #C0392B; border: 1px solid #F6CFC9; }
-.form-status.loading { background: var(--bg-alt); color: var(--bg-deep); border: 1px solid var(--line); }
-.field-error { color: var(--cta-dark); font-size: 0.78rem; margin-top: 6px; display: none; }
-.field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--cta-dark); }
-.field.invalid .field-error { display: block; }
+.confirm-box span {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.confirm-box strong {
+  color: var(--ink);
+}
+
+.form-status {
+  display: none;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.form-status.show {
+  display: block;
+}
+
+.form-status.success {
+  background: #E7F9F1;
+  color: #0F7A4E;
+  border: 1px solid #BEEBD4;
+}
+
+.form-status.error {
+  background: #FDEEEC;
+  color: #C0392B;
+  border: 1px solid #F6CFC9;
+}
+
+.form-status.loading {
+  background: var(--bg-alt);
+  color: var(--bg-deep);
+  border: 1px solid var(--line);
+}
+
+.field-error {
+  color: var(--cta-dark);
+  font-size: 0.78rem;
+  margin-top: 6px;
+  display: none;
+}
+
+.field.invalid input,
+.field.invalid select,
+.field.invalid textarea {
+  border-color: var(--cta-dark);
+}
+
+.field.invalid .field-error {
+  display: block;
+}
 
 /* ---- Learn more strip ---- */
+
 .learn-strip {
   background: var(--bg-deep);
   color: var(--white);
@@ -758,18 +1278,50 @@ section { padding: 64px 0; }
   gap: 24px;
   flex-wrap: wrap;
 }
-.learn-strip h2 { color: var(--white); font-size: 1.5rem; margin-bottom: 6px; }
-.learn-strip p { color: rgba(255,255,255,0.78); max-width: 42ch; }
-.learn-strip .btn-ghost { color: var(--white); border-color: rgba(255,255,255,0.35); }
-.learn-strip .btn-ghost:hover { border-color: var(--mint); color: var(--mint); }
+
+.learn-strip h2 {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.learn-strip p {
+  color: rgba(255,255,255,0.78);
+  max-width: 42ch;
+}
+
+.learn-strip .btn-ghost {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.learn-strip .btn-ghost:hover {
+  border-color: var(--mint);
+  color: var(--mint);
+}
 
 /* ---- Final CTA ---- */
-.final-cta { text-align: center; padding: 70px 0 90px; }
-.final-cta h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-bottom: 10px; }
-.final-cta p { margin-bottom: 26px; }
-.final-cta .pod-pill { margin-bottom: 18px; }
+
+.final-cta {
+  text-align: center;
+  padding: 70px 0 90px;
+}
+
+.final-cta h2 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  margin-bottom: 10px;
+}
+
+.final-cta p {
+  margin-bottom: 26px;
+}
+
+.final-cta .pod-pill {
+  margin-bottom: 18px;
+}
 
 /* ---- Footer ---- */
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 28px 0 100px;
@@ -777,12 +1329,19 @@ section { padding: 64px 0; }
   font-size: 0.82rem;
   color: var(--ink-soft);
 }
-.site-footer a { color: var(--bg-deep); font-weight: 600; }
+
+.site-footer a {
+  color: var(--bg-deep);
+  font-weight: 600;
+}
 
 /* ---- Sticky mobile CTA ---- */
+
 .sticky-cta {
   position: fixed;
-  left: 0; right: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 50;
   display: none;
   padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
@@ -790,41 +1349,100 @@ section { padding: 64px 0; }
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--line);
 }
-.sticky-cta .btn-cta { width: 100%; padding: 15px; }
+
+.sticky-cta .btn-cta {
+  width: 100%;
+  padding: 15px;
+}
 
 /* ==========================================================================
    Responsive
    ========================================================================== */
+
 @media (max-width: 980px) {
-  .hero .container { grid-template-columns: 1fr; }
-  .hero-stage { order: -1; max-width: 380px; margin: 0 auto; }
-  .benefit-grid { grid-template-columns: repeat(2, 1fr); }
-  .use-grid { grid-template-columns: repeat(2, 1fr); }
-  .price-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-  .demo-wrap { grid-template-columns: 1fr; }
-  .learn-strip { flex-direction: column; text-align: center; }
-  .nav-links .muted { display: none; }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stage {
+    order: -1;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .use-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .demo-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-strip {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links .muted {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
-  section { padding: 46px 0; }
-  .field-row { grid-template-columns: 1fr; }
-  .sticky-cta { display: block; }
-  .site-footer { padding-bottom: 96px; }
-  .benefit-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .benefit-card { padding: 18px 14px; }
+
+  section {
+    padding: 46px 0;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-cta {
+    display: block;
+  }
+
+  .site-footer {
+    padding-bottom: 96px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .benefit-card {
+    padding: 18px 14px;
+  }
 }
 
-.sticky-cta.hide-at-form { display: none !important; }
+.sticky-cta.hide-at-form {
+  display: none !important;
+}
+
 @media (max-width: 640px) {
-  .sticky-cta:not(.hide-at-form) { display: block; }
+  .sticky-cta:not(.hide-at-form) {
+    display: block;
+  }
 }
 
 </style>
 
 <!-- ==========================================================================
-     META PIXEL — replace PIXEL_ID_HERE with the real Pixel ID before launch
+     META PIXEL
      ========================================================================== -->
+
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -834,206 +1452,620 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', 'PIXEL_ID_HERE');
 fbq('track', 'PageView');
 </script>
+
 </head>
+
 <body>
 
 <!-- ============================== NAV ============================== -->
+
 <nav class="nav">
   <div class="container">
+
     <a href="#top" class="nav-brand">
+
       <span class="nav-logo" aria-hidden="true">
-        <img src="images/logo.png" alt="YOYOS DEVICES logo" width="34" height="34" decoding="async">
+        <img
+          src="images/logo.png"
+          alt="YOYOS DEVICES logo"
+          width="34"
+          height="34"
+          decoding="async"
+        >
       </span>
+
       YOYOS <span>DEVICES</span>
+
     </a>
+
     <div class="nav-links">
       <a href="learn-more.html" class="muted">Learn More</a>
       <a href="#order" class="nav-cta">Order Now</a>
     </div>
+
   </div>
 </nav>
 
 <!-- ============================== HERO ============================== -->
+
 <header class="hero" id="top">
+
   <div class="container">
-    <span class="hero-pill">🚚 Nationwide delivery across Nigeria</span>
-    <h1>Too Hot? Cool Down Anywhere.<span class="accent">R11 Handheld Fan</span></h1>
-    <p class="hero-sub">Double-click to switch on. Get that AC feeling wherever you are — home, office, travel or outdoors.</p>
-    <p class="seo-context">R11 handheld fan available in Nigeria with nationwide delivery and pay-on-delivery ordering.</p>
+
+    <span class="hero-pill">
+      🚚 Nationwide delivery across Nigeria
+    </span>
+
+    <h1>
+      Too Hot? Cool Down Anywhere.
+      <span class="accent">R11 Handheld Fan</span>
+    </h1>
+
+    <p class="hero-sub">
+      Double-click to switch on. Get that AC feeling wherever you are —
+      home, office, travel or outdoors.
+    </p>
+
+    <p class="seo-context">
+      R11 handheld fan available in Nigeria with nationwide delivery
+      and pay-on-delivery ordering.
+    </p>
 
     <div class="badge-row">
-      <span class="badge">💨 Strong Airflow</span>
-      <span class="badge">🔋 Rechargeable</span>
-      <span class="badge">🧳 Portable</span>
-      <span class="badge">🎚️ Multiple Speeds</span>
+
+      <span class="badge">
+        💨 Strong Airflow
+      </span>
+
+      <span class="badge">
+        🔋 Rechargeable
+      </span>
+
+      <span class="badge">
+        🧳 Portable
+      </span>
+
+      <span class="badge">
+        🎚️ Multiple Speeds
+      </span>
+
     </div>
 
     <div class="hero-ctas">
-      <a href="#order" class="btn btn-cta" data-track="hero">Order Now</a>
-      <a href="#benefits" class="learn-link">Learn More ↓</a>
+
+      <a
+        href="#order"
+        class="btn btn-cta"
+        data-track="hero"
+      >
+        Order Now
+      </a>
+
+      <a
+        href="#benefits"
+        class="learn-link"
+      >
+        Learn More ↓
+      </a>
+
     </div>
 
     <div class="hero-stage">
-      <img src="images/r11-main.webp" alt="R11 Handheld Fan" class="hero-photo" width="500" height="500" fetchpriority="high" decoding="async">
+
+      <img
+        src="images/r11-main.webp"
+        alt="R11 Handheld Fan"
+        class="hero-photo"
+        width="500"
+        height="500"
+        fetchpriority="high"
+        decoding="async"
+      >
+
     </div>
+
   </div>
+
 </header>
 
 <!-- ============================== BENEFITS ============================== -->
+
 <section id="benefits">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Cool air. Anywhere.</span>
-      <h2>Everything you need, nothing you don't</h2>
+
+      <span class="eyebrow">
+        Cool air. Anywhere.
+      </span>
+
+      <h2>
+        Everything you need, nothing you don't
+      </h2>
+
     </div>
+
     <div class="benefit-grid">
+
       <div class="benefit-card reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-        <h3>One-Touch Control</h3>
-        <p>Quick double-click to power on, double-click again to shut down.</p>
+
+        <div class="benefit-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/>
+          </svg>
+
+        </div>
+
+        <h3>
+          One-Touch Control
+        </h3>
+
+        <p>
+          Quick double-click to power on, double-click again to shut down.
+        </p>
+
       </div>
+
       <div class="benefit-card reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-        <h3>Rechargeable</h3>
-        <p>Use it without being tied to a power outlet.</p>
+
+        <div class="benefit-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/>
+          </svg>
+
+        </div>
+
+        <h3>
+          Rechargeable
+        </h3>
+
+        <p>
+          Use it without being tied to a power outlet.
+        </p>
+
       </div>
+
       <div class="benefit-card reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 6h4"/></svg></div>
-        <h3>Portable</h3>
-        <p>Carry it from room to room — office, school, travel.</p>
+
+        <div class="benefit-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="6" y="2" width="12" height="20" rx="2"/>
+            <path d="M10 6h4"/>
+          </svg>
+
+        </div>
+
+        <h3>
+          Portable
+        </h3>
+
+        <p>
+          Carry it from room to room — office, school, travel.
+        </p>
+
       </div>
+
       <div class="benefit-card reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Multiple Speeds</h3>
-        <p>Choose the airflow that feels right for you.</p>
+
+        <div class="benefit-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+
+        </div>
+
+        <h3>
+          Multiple Speeds
+        </h3>
+
+        <p>
+          Choose the airflow that feels right for you.
+        </p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- ============================== WHY YOU NEED THIS ============================== -->
+
 <section class="alt">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Hot weather doesn't wait</span>
-      <h2>Cooler air, wherever you go</h2>
-      <p>That AC feeling, in your pocket — keep your personal space cooler without carrying a bulky fan everywhere.</p>
+
+      <span class="eyebrow">
+        Hot weather doesn't wait
+      </span>
+
+      <h2>
+        Cooler air, wherever you go
+      </h2>
+
+      <p>
+        That AC feeling, in your pocket — keep your personal space cooler
+        without carrying a bulky fan everywhere.
+      </p>
+
     </div>
-    <img src="images/r11-controls.webp" alt="R11 Handheld Fan control guide — double-click to power on or off" class="feature-photo reveal" style="max-width:420px; margin:0 auto 40px; display:block;" width="420" height="420" loading="lazy" decoding="async">
+
+    <img
+      src="images/r11-controls.webp"
+      alt="R11 Handheld Fan control guide — double-click to power on or off"
+      class="feature-photo reveal"
+      style="max-width:420px; margin:0 auto 40px; display:block;"
+      width="420"
+      height="420"
+      loading="lazy"
+      decoding="async"
+    >
+
     <div class="use-grid">
+
       <div class="use-card reveal">
-        <img src="images/r11-colors.webp" alt="R11 Handheld Fan, boxed, with color options" class="use-photo" width="700" height="538" loading="lazy" decoding="async">
-        <span class="use-label">Home</span>
+
+        <img
+          src="images/r11-colors.webp"
+          alt="R11 Handheld Fan, boxed, with color options"
+          class="use-photo"
+          width="700"
+          height="538"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <span class="use-label">
+          Home
+        </span>
+
       </div>
+
       <div class="use-card reveal">
-        <img src="images/r11-main.webp" alt="R11 Handheld Fan" class="use-photo" width="700" height="700" loading="lazy" decoding="async">
-        <span class="use-label">Office</span>
+
+        <img
+          src="images/r11-main.webp"
+          alt="R11 Handheld Fan"
+          class="use-photo"
+          width="700"
+          height="700"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <span class="use-label">
+          Office
+        </span>
+
       </div>
+
       <div class="use-card reveal">
-        <img src="images/r11-stock.webp" alt="R11 Handheld Fan with packaging" class="use-photo" width="339" height="700" loading="lazy" decoding="async">
-        <span class="use-label">Travel</span>
+
+        <img
+          src="images/r11-stock.webp"
+          alt="R11 Handheld Fan with packaging"
+          class="use-photo"
+          width="339"
+          height="700"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <span class="use-label">
+          Travel
+        </span>
+
       </div>
+
       <div class="use-card reveal">
-        <img src="images/r11-controls.webp" alt="R11 Handheld Fan control guide" class="use-photo" width="700" height="700" loading="lazy" decoding="async">
-        <span class="use-label">Outdoors</span>
+
+        <img
+          src="images/r11-controls.webp"
+          alt="R11 Handheld Fan control guide"
+          class="use-photo"
+          width="700"
+          height="700"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <span class="use-label">
+          Outdoors
+        </span>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- ============================== DEMO ============================== -->
-<!-- When you have the video ready, replace the .img-placeholder block below
-     with one of these (sized for 9:16 vertical video via .video-embed):
 
-     Self-hosted file (put it in /videos/):
-       <div class="video-embed">
-         <video src="videos/demo.mp4" controls playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
-       </div>
-
-     YouTube (Shorts or any vertical video works fine embedded this way):
-       <div class="video-embed">
-         <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="How to use the R11 Handheld Fan" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       </div>
--->
 <section id="demo">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">How it works</span>
-      <h2>Double-click. Pick a speed. Feel the difference.</h2>
+
+      <span class="eyebrow">
+        How it works
+      </span>
+
+      <h2>
+        Double-click. Pick a speed. Feel the difference.
+      </h2>
+
     </div>
+
     <div class="demo-wrap">
+
       <div class="demo-video reveal">
+
         <div class="img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span class="ph-label">Demo video (9:16)</span>
-          <span class="ph-path">coming soon</span>
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+
+          <span class="ph-label">
+            Demo video (9:16)
+          </span>
+
+          <span class="ph-path">
+            coming soon
+          </span>
+
         </div>
+
       </div>
+
       <ol class="demo-steps reveal">
-        <li><div><strong>Double-click to power on</strong><span>Quick double-click the side button to switch it on.</span></div></li>
-        <li><div><strong>Select speed</strong><span>Choose the airflow level shown on the digital display.</span></div></li>
-        <li><div><strong>Enjoy the airflow</strong><span>Cooler air, right where you need it.</span></div></li>
-        <li><div><strong>Double-click to power off</strong><span>Quick double-click again to shut it down.</span></div></li>
+
+        <li>
+          <div>
+            <strong>
+              Double-click to power on
+            </strong>
+            <span>
+              Quick double-click the side button to switch it on.
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <strong>
+              Select speed
+            </strong>
+            <span>
+              Choose the airflow level shown on the digital display.
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <strong>
+              Enjoy the airflow
+            </strong>
+            <span>
+              Cooler air, right where you need it.
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <strong>
+              Double-click to power off
+            </strong>
+            <span>
+              Quick double-click again to shut it down.
+            </span>
+          </div>
+        </li>
+
       </ol>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- ============================== PRICING ============================== -->
+
 <section id="pricing">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Today's offer</span>
-      <h2>Pick your bundle</h2>
+
+      <span class="eyebrow">
+        Today's offer
+      </span>
+
+      <h2>
+        Pick your bundle
+      </h2>
+
     </div>
-    <div class="price-grid" id="price-grid"><!-- rendered by script.js from PRODUCT.tiers --></div>
-    <p class="stock-strip" id="stock-strip">Limited stock available</p>
+
+    <div
+      class="price-grid"
+      id="price-grid"
+    >
+      <!-- rendered by script below -->
+    </div>
+
+    <p
+      class="stock-strip"
+      id="stock-strip"
+    >
+      Limited stock available
+    </p>
+
   </div>
+
 </section>
 
 <!-- ============================== LEARN MORE STRIP ============================== -->
+
 <section>
+
   <div class="container">
+
     <div class="learn-strip reveal">
+
       <div>
-        <h2>Want to know more?</h2>
-        <p>See the full product guide, demonstration and detailed specifications.</p>
+
+        <h2>
+          Want to know more?
+        </h2>
+
+        <p>
+          See the full product guide, demonstration and detailed specifications.
+        </p>
+
       </div>
-      <a href="learn-more.html" class="btn btn-ghost">Learn More</a>
+
+      <a
+        href="learn-more.html"
+        class="btn btn-ghost"
+      >
+        Learn More
+      </a>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- ============================== ORDER FORM ============================== -->
+
 <section class="alt" id="order">
+
   <div class="container container-narrow">
+
     <div class="section-head reveal">
-      <h2>Secure Your Order</h2>
-      <p>Complete the form below. We'll contact you shortly to confirm delivery details.</p>
+
+      <h2>
+        Secure Your Order
+      </h2>
+
+      <p>
+        Complete the form below. We'll contact you shortly to confirm delivery details.
+      </p>
+
     </div>
 
-    <form class="order-form reveal" id="order-form" name="r11-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-      <input type="hidden" name="form-name" value="r11-order">
-      <input type="hidden" name="orderReference" id="orderReference" value="">
-      <p style="position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px;margin:0;padding:0;"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <form
+      class="order-form reveal"
+      id="order-form"
+      name="r11-order"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      novalidate
+    >
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="r11-order"
+      >
+
+      <input
+        type="hidden"
+        name="orderReference"
+        id="orderReference"
+        value=""
+      >
+
+      <p style="display:none;">
+        <label>
+          Don't fill this out:
+          <input name="bot-field">
+        </label>
+      </p>
 
       <div class="field">
-        <label for="package">Select Your Package <span class="req">*</span></label>
-      
-        <select id="package" name="package" required>
-          <option value="" disabled selected>Choose package quantity...</option>
+
+        <label for="package">
+          Select Your Package
+          <span class="req">*</span>
+        </label>
+
+        <select
+          id="package"
+          name="package"
+          required
+        >
+
+          <option
+            value=""
+            disabled
+            selected
+          >
+            Choose package quantity...
+          </option>
+
         </select>
-      
-        <span class="field-error">Please select a package.</span>
+
+        <span class="field-error">
+          Please select a package.
+        </span>
+
       </div>
-      
-      
+
       <div class="field">
-        <label for="fullName">Full Name <span class="req">*</span></label>
-      
+
+        <label for="fullName">
+          Full Name
+          <span class="req">*</span>
+        </label>
+
         <input
           type="text"
           id="fullName"
@@ -1042,14 +2074,20 @@ fbq('track', 'PageView');
           placeholder="Enter Fullname"
           required
         >
-      
-        <span class="field-error">Please enter your full name.</span>
+
+        <span class="field-error">
+          Please enter your full name.
+        </span>
+
       </div>
-      
-      
+
       <div class="field">
-        <label for="phone">Phone Number <span class="req">*</span></label>
-      
+
+        <label for="phone">
+          Phone Number
+          <span class="req">*</span>
+        </label>
+
         <input
           type="tel"
           id="phone"
@@ -1058,27 +2096,36 @@ fbq('track', 'PageView');
           placeholder="08012345678"
           required
         >
-      
-        <span class="field-error">Enter a valid Nigerian phone number.</span>
+
+        <span class="field-error">
+          Enter a valid Nigerian phone number.
+        </span>
+
       </div>
-      
-      
+
       <div class="field">
-        <label for="whatsapp">WhatsApp Number (Optional)</label>
-      
+
+        <label for="whatsapp">
+          WhatsApp Number (Optional)
+        </label>
+
         <input
           type="tel"
           id="whatsapp"
           name="whatsapp"
           autocomplete="tel"
-          placeholder="08012345678 (for WhatsApp updates)"
+          placeholder="e-g 080******** (for order updates)"
         >
+
       </div>
-      
-      
+
       <div class="field">
-        <label for="address">Delivery Address <span class="req">*</span></label>
-      
+
+        <label for="address">
+          Delivery Address
+          <span class="req">*</span>
+        </label>
+
         <textarea
           id="address"
           name="address"
@@ -1086,394 +2133,1261 @@ fbq('track', 'PageView');
           placeholder="Include a landmark if possible"
           required
         ></textarea>
-      
-        <span class="field-error">Please enter your delivery address.</span>
+
+        <span class="field-error">
+          Please enter your delivery address.
+        </span>
+
       </div>
 
       <div class="field">
-        <label for="address">Delivery Address <span class="req">*</span></label>
-        <textarea id="address" name="address" rows="3" placeholder="Include a landmark if possible" required></textarea>
-        <span class="field-error">Please enter your delivery address.</span>
-      </div>
 
-      <div class="field">
-        <label for="notes">Special Requests or Gate Code</label>
-        <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions for delivery? (e.g., gate code, best time to deliver)"></textarea>
+        <label for="notes">
+          Special Requests or Gate Code
+        </label>
+
+        <textarea
+          id="notes"
+          name="notes"
+          rows="3"
+          placeholder="Any special instructions for delivery? (e.g., gate code, best time to deliver)"
+        ></textarea>
+
       </div>
 
       <div class="notice-box">
-        <span class="notice-icon">⚠️</span>
-        <p><strong>Important:</strong> Submitting this form places a real order. Our team will contact you by phone to confirm delivery. Payment is on delivery (COD).</p>
+
+        <span class="notice-icon">
+          ⚠️
+        </span>
+
+        <p>
+          <strong>Important:</strong>
+          Submitting this form places a real order. Our team will contact
+          you by phone or WhatsApp to confirm delivery. Payment is on delivery (COD).
+        </p>
+
       </div>
 
       <label class="confirm-box">
-        <input type="checkbox" id="confirm" name="confirm" required>
-        <span><strong>I confirm this is a genuine order</strong> and the details above (name, phone, and address) are accurate. I understand a team member will contact me to finalize delivery.</span>
+
+        <input
+          type="checkbox"
+          id="confirm"
+          name="confirm"
+          required
+        >
+
+        <span>
+          <strong>I confirm this is a genuine order</strong>
+          and the details above (name, phone, and address) are accurate.
+          I understand a team member will contact me to finalize delivery.
+        </span>
+
       </label>
 
-      <button type="submit" class="btn btn-cta btn-block" id="submit-btn" data-track="form">Complete Order</button>
-      <div class="form-status" id="form-status"></div>
+      <button
+        type="submit"
+        class="btn btn-cta btn-block"
+        id="submit-btn"
+        data-track="form"
+      >
+        Complete Order
+      </button>
+
+      <div
+        class="form-status"
+        id="form-status"
+      ></div>
+
     </form>
 
-    <div class="order-success" id="order-success">
-      <span class="success-check" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+    <div
+      class="order-success"
+      id="order-success"
+    >
+
+      <span
+        class="success-check"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path d="M20 6 9 17l-5-5"/>
+        </svg>
+
       </span>
-      <h2>Order Received</h2>
-      <p class="success-sub">Thanks — your order has been received and is being processed.</p>
-      <p class="success-note">Our team will contact you within 24 hours to confirm delivery.</p>
+
+      <h2>
+        Order Received
+      </h2>
+
+      <p class="success-sub">
+        Thanks — your order has been received and is being processed.
+      </p>
+
+      <p class="success-note">
+        Our team will contact you within 24 hours to confirm delivery.
+      </p>
 
       <div class="success-card">
-        <div class="success-row"><span>Order reference</span><strong id="sr-ref"></strong></div>
-        <div class="success-row"><span>Package</span><strong id="sr-package"></strong></div>
-        <div class="success-row"><span>Contact number</span><strong id="sr-phone"></strong></div>
-        <div class="success-row"><span>Delivery time</span><strong id="sr-delivery"></strong></div>
-        <div class="success-row"><span>Payment</span><strong>Collect on delivery</strong></div>
+
+        <div class="success-row">
+          <span>Order reference</span>
+          <strong id="sr-ref"></strong>
+        </div>
+
+        <div class="success-row">
+          <span>Package</span>
+          <strong id="sr-package"></strong>
+        </div>
+
+        <div class="success-row">
+          <span>Contact number</span>
+          <strong id="sr-phone"></strong>
+        </div>
+
+        <div class="success-row">
+          <span>Delivery time</span>
+          <strong id="sr-delivery"></strong>
+        </div>
+
+        <div class="success-row">
+          <span>Payment</span>
+          <strong>Collect on delivery</strong>
+        </div>
+
       </div>
 
       <div class="success-tip">
-        <span>✓</span> Keep your phone reachable — we'll call you to confirm your address before dispatch.
+
+        <span>
+          ✓
+        </span>
+
+        Keep your phone reachable — we'll call or WhatsApp you to confirm your address before dispatch.
+
       </div>
 
-      <button type="button" class="btn btn-block success-done" id="success-done">Done</button>
+      <button
+        type="button"
+        class="btn btn-block success-done"
+        id="success-done"
+      >
+        Done
+      </button>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- ============================== FINAL CTA ============================== -->
+
 <section class="final-cta">
+
   <div class="container">
-    <span class="pod-pill"><span class="dot"></span> PAY ON DELIVERY</span>
-    <h2>Ready to cool down?</h2>
-    <p>Get your R11 Handheld Fan today.</p>
-    <a href="#order" class="btn btn-cta" data-track="final">Order Now</a>
+
+    <span class="pod-pill">
+      <span class="dot"></span>
+      PAY ON DELIVERY
+    </span>
+
+    <h2>
+      Ready to cool down?
+    </h2>
+
+    <p>
+      Get your R11 Handheld Fan today.
+    </p>
+
+    <a
+      href="#order"
+      class="btn btn-cta"
+      data-track="final"
+    >
+      Order Now
+    </a>
+
   </div>
+
 </section>
 
 <!-- ============================== FOOTER ============================== -->
+
 <footer class="site-footer">
+
   <div class="container">
-    <p>YOYOS DEVICES &middot; <a href="learn-more.html">Learn More</a></p>
+
+    <p>
+      YOYOS DEVICES
+      &middot;
+      <a href="learn-more.html">
+        Learn More
+      </a>
+      &middot;
+      WhatsApp: WHATSAPP_NUMBER_HERE
+    </p>
+
   </div>
+
 </footer>
 
 <!-- ============================== STICKY MOBILE CTA ============================== -->
-<div class="sticky-cta" id="sticky-cta">
-  <a href="#order" class="btn btn-cta" data-track="sticky">Order Now — Pay on Delivery</a>
+
+<div
+  class="sticky-cta"
+  id="sticky-cta"
+>
+
+  <a
+    href="#order"
+    class="btn btn-cta"
+    data-track="sticky"
+  >
+    Order Now — Pay on Delivery
+  </a>
+
 </div>
 
 <script>
+
 /* ==========================================================================
    YOYOS DEVICES — R11 Handheld Fan
    ========================================================================== */
 
 /* ---------------------------------------------------------------------
-   1. PRODUCT CONFIGURATION — edit prices/stock/delivery here
+   1. PRODUCT CONFIGURATION
    --------------------------------------------------------------------- */
+
 const PRODUCT = {
+
   name: "R11 Handheld Fan",
+
   stock: "Limited stock available",
+
   delivery: "3–5 working days nationwide. Pay on delivery.",
+
   tiers: [
-    { qty: 1, price: 15000, oldPrice: 17000, label: "1 Unit",  tag: null },
-    { qty: 2, price: 25000, oldPrice: 26500, label: "2 Units", tag: "Most Popular" },
-    { qty: 3, price: 30000, oldPrice: 32000, label: "3 Units", tag: "Best Value" }
+    {
+      qty: 1,
+      price: 15000,
+      oldPrice: 17000,
+      label: "1 Unit",
+      tag: null
+    },
+
+    {
+      qty: 2,
+      price: 25000,
+      oldPrice: 26500,
+      label: "2 Units",
+      tag: "Most Popular"
+    },
+
+    {
+      qty: 3,
+      price: 30000,
+      oldPrice: 32000,
+      label: "3 Units",
+      tag: "Best Value"
+    }
   ]
+
 };
 
-/* Dev-mode mock submission — keep false for the live Google Apps Script endpoint */
-const MOCK_SUBMIT_MODE = false;
+
 /* ---------------------------------------------------------------------
-   2. ORDER API ENDPOINT — insert real backend endpoint here if/when
-      moving beyond Netlify Forms (currently unused; form posts natively)
+   2. GOOGLE APPS SCRIPT ORDER ENDPOINT
    --------------------------------------------------------------------- */
-const ORDER_API_ENDPOINT = "https://script.google.com/macros/s/AKfycbyJWAhSmXaaHS5H6i-eZDEMzIPkx8g2RfJa-l02cqyC7NKG4NLfeWndqAqqFkmyCH1N/exec";
+
+const ORDER_API_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbyJWAhSmXaaHS5H6i-eZDEMzIPkx8g2RfJa-l02cqyC7NKG4NLfeWndqAqqFkmyCH1N/exec";
+
 
 function nairaFormat(n) {
+
   return "₦" + n.toLocaleString("en-NG");
+
 }
+
 
 /* ---------------------------------------------------------------------
    3. RENDER PRICING CARDS + PACKAGE DROPDOWN
    --------------------------------------------------------------------- */
+
 function renderPricing() {
+
   const grid = document.getElementById("price-grid");
+
   if (grid) {
+
     grid.innerHTML = PRODUCT.tiers.map(tier => {
+
       const savings = tier.oldPrice - tier.price;
+
       return `
-        <div class="price-card ${tier.tag ? "featured" : ""} reveal" data-qty="${tier.qty}">
-          ${tier.tag ? `<span class="price-tag">${tier.tag}</span>` : ""}
-          <div class="price-qty">${tier.label.toUpperCase()}</div>
-          <div class="price-old">${nairaFormat(tier.oldPrice)}</div>
-          <div class="price-now">${nairaFormat(tier.price)}</div>
-          <div class="price-save">Save ${nairaFormat(savings)}</div>
-          <button type="button" class="btn btn-cta btn-block select-tier" data-qty="${tier.qty}" data-track="pricing">Order ${tier.label}</button>
-          <div class="price-note"><strong>Pay on Delivery</strong><br>${PRODUCT.delivery}</div>
-        </div>`;
+        <div
+          class="price-card ${tier.tag ? "featured" : ""} reveal"
+          data-qty="${tier.qty}"
+        >
+
+          ${
+            tier.tag
+              ? `<span class="price-tag">${tier.tag}</span>`
+              : ""
+          }
+
+          <div class="price-qty">
+            ${tier.label.toUpperCase()}
+          </div>
+
+          <div class="price-old">
+            ${nairaFormat(tier.oldPrice)}
+          </div>
+
+          <div class="price-now">
+            ${nairaFormat(tier.price)}
+          </div>
+
+          <div class="price-save">
+            Save ${nairaFormat(savings)}
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-cta btn-block select-tier"
+            data-qty="${tier.qty}"
+            data-track="pricing"
+          >
+            Order ${tier.label}
+          </button>
+
+          <div class="price-note">
+            <strong>Pay on Delivery</strong>
+            <br>
+            ${PRODUCT.delivery}
+          </div>
+
+        </div>
+      `;
+
     }).join("");
 
+
     grid.querySelectorAll(".select-tier").forEach(btn => {
+
       btn.addEventListener("click", () => {
+
         const qty = parseInt(btn.dataset.qty, 10);
+
         selectPackage(qty);
-        document.getElementById("order").scrollIntoView({ behavior: "smooth" });
-        trackEvent("InitiateCheckout", { content_name: PRODUCT.name, quantity: qty });
+
+        document
+          .getElementById("order")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+        trackEvent(
+          "InitiateCheckout",
+          {
+            content_name: PRODUCT.name,
+            quantity: qty
+          }
+        );
+
       });
+
     });
+
   }
 
-  const stockStrip = document.getElementById("stock-strip");
-  if (stockStrip) stockStrip.textContent = PRODUCT.stock;
 
-  const select = document.getElementById("package");
+  const stockStrip =
+    document.getElementById("stock-strip");
+
+  if (stockStrip) {
+
+    stockStrip.textContent = PRODUCT.stock;
+
+  }
+
+
+  const select =
+    document.getElementById("package");
+
   if (select) {
+
     PRODUCT.tiers.forEach(tier => {
-      const opt = document.createElement("option");
+
+      const opt =
+        document.createElement("option");
+
       opt.value = tier.qty;
-      opt.textContent = `${tier.label} — ${nairaFormat(tier.price)}${tier.tag ? ` (${tier.tag})` : ""}`;
+
+      opt.textContent =
+        `${tier.label} — ${nairaFormat(tier.price)}${
+          tier.tag
+            ? ` (${tier.tag})`
+            : ""
+        }`;
+
       select.appendChild(opt);
+
     });
+
   }
+
 }
+
 
 function selectPackage(qty) {
-  const select = document.getElementById("package");
+
+  const select =
+    document.getElementById("package");
+
   if (select) {
+
     select.value = qty;
-    select.closest(".field")?.classList.remove("invalid");
+
+    select
+      .closest(".field")
+      ?.classList
+      .remove("invalid");
+
   }
+
 }
+
 
 /* ---------------------------------------------------------------------
    4. FORM VALIDATION
    --------------------------------------------------------------------- */
+
 function isValidNGPhone(value) {
-  const digits = value.replace(/[\s-]/g, "");
-  // Nigerian mobile numbers: 11 digits starting 0, or +234 followed by 10 digits
-  return /^0\d{10}$/.test(digits) || /^\+?234\d{10}$/.test(digits);
+
+  const digits =
+    value.replace(/[\s-]/g, "");
+
+  return (
+    /^0\d{10}$/.test(digits) ||
+    /^\+?234\d{10}$/.test(digits)
+  );
+
 }
+
 
 function setFieldError(fieldEl, hasError) {
-  const wrap = fieldEl.closest(".field");
+
+  const wrap =
+    fieldEl.closest(".field");
+
   if (!wrap) return;
-  wrap.classList.toggle("invalid", hasError);
+
+  wrap.classList.toggle(
+    "invalid",
+    hasError
+  );
+
 }
+
 
 function validateForm(form) {
+
   let valid = true;
 
-  const pkg = form.querySelector("#package");
-  if (!pkg.value) { setFieldError(pkg, true); valid = false; }
-  else setFieldError(pkg, false);
 
-  const fullName = form.querySelector("#fullName");
-  if (!fullName.value.trim()) { setFieldError(fullName, true); valid = false; }
-  else setFieldError(fullName, false);
+  const pkg =
+    form.querySelector("#package");
 
-  const phone = form.querySelector("#phone");
-  if (!isValidNGPhone(phone.value.trim())) { setFieldError(phone, true); valid = false; }
-  else setFieldError(phone, false);
+  if (!pkg.value) {
 
-  const address = form.querySelector("#address");
-  if (!address.value.trim()) { setFieldError(address, true); valid = false; }
-  else setFieldError(address, false);
+    setFieldError(pkg, true);
 
-  const confirm = form.querySelector("#confirm");
-  if (!confirm.checked) { valid = false; }
+    valid = false;
+
+  } else {
+
+    setFieldError(pkg, false);
+
+  }
+
+
+  const fullName =
+    form.querySelector("#fullName");
+
+  if (!fullName.value.trim()) {
+
+    setFieldError(fullName, true);
+
+    valid = false;
+
+  } else {
+
+    setFieldError(fullName, false);
+
+  }
+
+
+  const phone =
+    form.querySelector("#phone");
+
+  if (
+    !isValidNGPhone(
+      phone.value.trim()
+    )
+  ) {
+
+    setFieldError(phone, true);
+
+    valid = false;
+
+  } else {
+
+    setFieldError(phone, false);
+
+  }
+
+
+  const whatsapp =
+    form.querySelector("#whatsapp");
+
+  if (
+    whatsapp.value.trim() &&
+    !isValidNGPhone(
+      whatsapp.value.trim()
+    )
+  ) {
+
+    setFieldError(
+      whatsapp,
+      true
+    );
+
+    valid = false;
+
+  } else {
+
+    setFieldError(
+      whatsapp,
+      false
+    );
+
+  }
+
+
+  const address =
+    form.querySelector("#address");
+
+  if (!address.value.trim()) {
+
+    setFieldError(address, true);
+
+    valid = false;
+
+  } else {
+
+    setFieldError(address, false);
+
+  }
+
+
+  const confirm =
+    form.querySelector("#confirm");
+
+  if (!confirm.checked) {
+
+    valid = false;
+
+  }
+
 
   return valid;
+
 }
+
 
 /* ---------------------------------------------------------------------
-   5. SUBMIT ORDER — wire real backend here later
+   5. STATUS
    --------------------------------------------------------------------- */
+
 function setStatus(message, type) {
-  const statusEl = document.getElementById("form-status");
+
+  const statusEl =
+    document.getElementById(
+      "form-status"
+    );
+
   if (!statusEl) return;
+
   statusEl.textContent = message;
-  statusEl.className = `form-status show ${type}`;
+
+  statusEl.className =
+    `form-status show ${type}`;
+
 }
 
-/* Order reference format matches the Type 928 teaser page: PRODUCTCODE-MMDDHHMMSS-XX
-   The trailing 2 letters are randomized so two orders placed in the same second
-   never collide on the same reference. */
+
+/* ---------------------------------------------------------------------
+   6. ORDER REFERENCE
+   --------------------------------------------------------------------- */
+
 function generateOrderReference() {
+
   const now = new Date();
-  const pad = n => String(n).padStart(2, "0");
-  const stamp = `${pad(now.getMonth() + 1)}${pad(now.getDate())}${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const suffix = letters[Math.floor(Math.random() * letters.length)] + letters[Math.floor(Math.random() * letters.length)];
+
+  const pad =
+    n => String(n).padStart(2, "0");
+
+  const stamp =
+    `${pad(now.getMonth() + 1)}${pad(now.getDate())}${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+
+  const letters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  const suffix =
+    letters[
+      Math.floor(
+        Math.random() *
+        letters.length
+      )
+    ] +
+    letters[
+      Math.floor(
+        Math.random() *
+        letters.length
+      )
+    ];
+
   return `R11-${stamp}-${suffix}`;
+
 }
 
-function showOrderSuccess(form, reference) {
-  const pkgSelect = form.querySelector("#package");
-  const tier = PRODUCT.tiers.find(t => String(t.qty) === pkgSelect.value);
 
-  document.getElementById("sr-ref").textContent = reference;
-  document.getElementById("sr-package").textContent = tier ? `${tier.label} — ${nairaFormat(tier.price)}` : "—";
-  document.getElementById("sr-phone").textContent = form.querySelector("#phone").value.trim();
-  document.getElementById("sr-delivery").textContent = "3–5 days";
+/* ---------------------------------------------------------------------
+   7. SUCCESS PANEL
+   --------------------------------------------------------------------- */
+
+function showOrderSuccess(
+  form,
+  reference
+) {
+
+  const pkgSelect =
+    form.querySelector("#package");
+
+  const tier =
+    PRODUCT.tiers.find(
+      t =>
+        String(t.qty) ===
+        pkgSelect.value
+    );
+
+
+  document
+    .getElementById("sr-ref")
+    .textContent = reference;
+
+
+  document
+    .getElementById("sr-package")
+    .textContent =
+      tier
+        ? `${tier.label} — ${nairaFormat(tier.price)}`
+        : "—";
+
+
+  document
+    .getElementById("sr-phone")
+    .textContent =
+      form
+        .querySelector("#phone")
+        .value
+        .trim();
+
+
+  document
+    .getElementById("sr-delivery")
+    .textContent =
+      "3–5 days";
+
 
   form.style.display = "none";
-  const successPanel = document.getElementById("order-success");
+
+
+  const successPanel =
+    document.getElementById(
+      "order-success"
+    );
+
   successPanel.classList.add("show");
-  successPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  successPanel.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
 }
+
 
 function resetOrderSuccess(form) {
-  document.getElementById("order-success").classList.remove("show");
+
+  document
+    .getElementById("order-success")
+    .classList.remove("show");
+
   form.style.display = "";
+
   form.reset();
+
   setStatus("", "");
-  document.getElementById("form-status").className = "form-status";
-  document.getElementById("order").scrollIntoView({ behavior: "smooth" });
+
+  document
+    .getElementById("form-status")
+    .className = "form-status";
+
+  document
+    .getElementById("order")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
 }
+
+
+/* ---------------------------------------------------------------------
+   8. SUBMIT ORDER
+   --------------------------------------------------------------------- */
 
 async function submitOrder(form) {
-  const submitBtn = document.getElementById("submit-btn");
+
+  const submitBtn =
+    document.getElementById(
+      "submit-btn"
+    );
+
   submitBtn.disabled = true;
-  setStatus("Placing your order…", "loading");
 
-  const reference = generateOrderReference();
-  document.getElementById("orderReference").value = reference;
+  setStatus(
+    "Placing your order…",
+    "loading"
+  );
 
-  const formData = new FormData(form);
-  const encoded = new URLSearchParams(formData).toString();
+
+  const reference =
+    generateOrderReference();
+
+
+  document
+    .getElementById("orderReference")
+    .value = reference;
+
+
+  const formData =
+    new FormData(form);
+
+
+  /*
+   * Convert FormData to URLSearchParams.
+   *
+   * This sends the fields directly to the
+   * Google Apps Script doPost(e).
+   */
+
+  const params =
+    new URLSearchParams();
+
+
+  formData.forEach(
+    (value, key) => {
+
+      params.append(
+        key,
+        value
+      );
+
+    }
+  );
+
+
+  /*
+   * Google Apps Script Web Apps can return
+   * a redirect. redirect:"follow" is important.
+   */
 
   try {
-    if (MOCK_SUBMIT_MODE) {
-      await new Promise(resolve => setTimeout(resolve, 900));
-    } else {
-      // PRIMARY: send the order directly to the new Google Apps Script /exec endpoint.
-      // no-cors is intentional because Apps Script web apps may not expose a
-      // browser-readable CORS response even though the POST is received.
-      const appsScriptRequest = fetch(ORDER_API_ENDPOINT, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-        body: encoded,
-        keepalive: true
-      });
 
-      // BACKUP: send the same submission to Netlify Forms.
-      // The deployed HTML form is also marked data-netlify="true" so Netlify
-      // can detect the form during the build.
-      const netlifyRequest = fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-        body: encoded,
-        keepalive: true
-      });
+    const response =
+      await fetch(
+        ORDER_API_ENDPOINT,
+        {
+          method: "POST",
 
-      // Wait for both network requests to be dispatched. The Apps Script
-      // request uses no-cors, so its response cannot be inspected here.
-      await Promise.allSettled([appsScriptRequest, netlifyRequest]);
+          headers: {
+            "Content-Type":
+              "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+
+          body: params.toString(),
+
+          redirect: "follow"
+        }
+      );
+
+
+    /*
+     * Apps Script normally returns HTTP 200
+     * when doPost() completes.
+     */
+
+    if (!response.ok) {
+
+      throw new Error(
+        `Server returned ${response.status}`
+      );
+
     }
 
-    trackEvent("Lead", { content_name: PRODUCT.name });
-    trackEvent("Purchase", { content_name: PRODUCT.name, currency: "NGN" });
-    showOrderSuccess(form, reference);
+
+    let result = null;
+
+
+    try {
+
+      result =
+        await response.json();
+
+    } catch (_) {
+
+      /*
+       * Some Apps Script redirects can return
+       * text even though the operation succeeded.
+       */
+
+      result = null;
+
+    }
+
+
+    if (
+      result &&
+      result.success === false
+    ) {
+
+      throw new Error(
+        result.error ||
+        "The order was rejected."
+      );
+
+    }
+
+
+    /*
+     * Netlify backup submission.
+     *
+     * We also submit the same order to Netlify
+     * so it can store a backup submission.
+     */
+
+    try {
+
+      await fetch(
+        "/",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/x-www-form-urlencoded"
+          },
+
+          body:
+            new URLSearchParams(
+              formData
+            ).toString()
+        }
+      );
+
+    } catch (_) {
+
+      /*
+       * Google Sheets is the primary order
+       * destination. Netlify is only backup.
+       */
+
+    }
+
+
+    trackEvent(
+      "Lead",
+      {
+        content_name:
+          PRODUCT.name
+      }
+    );
+
+
+    trackEvent(
+      "Purchase",
+      {
+        content_name:
+          PRODUCT.name,
+
+        currency:
+          "NGN"
+      }
+    );
+
+
+    showOrderSuccess(
+      form,
+      reference
+    );
+
+
   } catch (err) {
-    console.error("Order submission error:", err);
-    setStatus("Something went wrong. Please try again.", "error");
+
+    console.error(
+      "Order submission error:",
+      err
+    );
+
+
+    setStatus(
+      "Something went wrong. Please try again or WhatsApp us.",
+      "error"
+    );
+
+
   } finally {
+
     submitBtn.disabled = false;
+
   }
+
 }
+
+
+/* ---------------------------------------------------------------------
+   9. FORM INITIALIZATION
+   --------------------------------------------------------------------- */
 
 function initForm() {
-  const form = document.getElementById("order-form");
-  if (!form) return;
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!validateForm(form)) return;
-    submitOrder(form);
-  });
 
-  const doneBtn = document.getElementById("success-done");
-  if (doneBtn) doneBtn.addEventListener("click", () => resetOrderSuccess(form));
+  const form =
+    document.getElementById(
+      "order-form"
+    );
+
+  if (!form) return;
+
+
+  form.addEventListener(
+    "submit",
+    (e) => {
+
+      e.preventDefault();
+
+
+      if (!validateForm(form)) {
+
+        return;
+
+      }
+
+
+      submitOrder(form);
+
+    }
+  );
+
+
+  const doneBtn =
+    document.getElementById(
+      "success-done"
+    );
+
+
+  if (doneBtn) {
+
+    doneBtn.addEventListener(
+      "click",
+      () =>
+        resetOrderSuccess(form)
+    );
+
+  }
+
 }
+
 
 /* ---------------------------------------------------------------------
-   6. META PIXEL EVENT WIRING (placeholders — Pixel ID set in index.html)
+   10. META PIXEL EVENT WIRING
    --------------------------------------------------------------------- */
-function trackEvent(eventName, params) {
-  if (typeof fbq === "function") {
-    fbq("track", eventName, params || {});
+
+function trackEvent(
+  eventName,
+  params
+) {
+
+  if (
+    typeof fbq === "function"
+  ) {
+
+    fbq(
+      "track",
+      eventName,
+      params || {}
+    );
+
   }
+
 }
+
+
+/* ---------------------------------------------------------------------
+   11. CTA TRACKING
+   --------------------------------------------------------------------- */
 
 function initCtaTracking() {
-  document.querySelectorAll("[data-track]").forEach(el => {
-    el.addEventListener("click", () => {
-      trackEvent("ViewContent", { content_name: PRODUCT.name, source: el.dataset.track });
-    });
-  });
-}
 
-/* ---------------------------------------------------------------------
-   7. STICKY MOBILE CTA — hide once the order form is in view
-   --------------------------------------------------------------------- */
-function initStickyCta() {
-  const sticky = document.getElementById("sticky-cta");
-  const orderSection = document.getElementById("order");
-  if (!sticky || !orderSection || !("IntersectionObserver" in window)) return;
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(entry => sticky.classList.toggle("hide-at-form", entry.isIntersecting)),
-    { threshold: 0.15 }
-  );
-  observer.observe(orderSection);
-}
+  document
+    .querySelectorAll(
+      "[data-track]"
+    )
+    .forEach(el => {
 
-/* ---------------------------------------------------------------------
-   8. SCROLL REVEAL ANIMATIONS
-   --------------------------------------------------------------------- */
-function initScrollReveal() {
-  const items = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) {
-    items.forEach(el => el.classList.add("in-view"));
-    return;
-  }
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          // stagger by position among reveal-siblings in the same parent,
-          // so grouped cards (benefits, use-cases, pricing) fan in one by
-          // one in a clearly visible cascade, like cards being dealt
-          const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains("reveal"));
-          const index = siblings.indexOf(el);
-          const delay = Math.min(index, 6) * 140;
-          setTimeout(() => el.classList.add("in-view"), delay);
-          observer.unobserve(el);
+      el.addEventListener(
+        "click",
+        () => {
+
+          trackEvent(
+            "ViewContent",
+            {
+              content_name:
+                PRODUCT.name,
+
+              source:
+                el.dataset.track
+            }
+          );
+
         }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-  );
-  items.forEach(el => observer.observe(el));
+      );
+
+    });
+
 }
+
+
+/* ---------------------------------------------------------------------
+   12. STICKY MOBILE CTA
+   --------------------------------------------------------------------- */
+
+function initStickyCta() {
+
+  const sticky =
+    document.getElementById(
+      "sticky-cta"
+    );
+
+  const orderSection =
+    document.getElementById(
+      "order"
+    );
+
+
+  if (
+    !sticky ||
+    !orderSection ||
+    !("IntersectionObserver" in window)
+  ) {
+
+    return;
+
+  }
+
+
+  const observer =
+    new IntersectionObserver(
+      entries =>
+        entries.forEach(
+          entry =>
+            sticky.classList.toggle(
+              "hide-at-form",
+              entry.isIntersecting
+            )
+        ),
+      {
+        threshold: 0.15
+      }
+    );
+
+
+  observer.observe(
+    orderSection
+  );
+
+}
+
+
+/* ---------------------------------------------------------------------
+   13. SCROLL REVEAL
+   --------------------------------------------------------------------- */
+
+function initScrollReveal() {
+
+  const items =
+    document.querySelectorAll(
+      ".reveal"
+    );
+
+
+  if (
+    !("IntersectionObserver" in window)
+  ) {
+
+    items.forEach(
+      el =>
+        el.classList.add(
+          "in-view"
+        )
+    );
+
+    return;
+
+  }
+
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(
+          entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              const el =
+                entry.target;
+
+
+              const siblings =
+                Array.from(
+                  el.parentElement.children
+                ).filter(
+                  c =>
+                    c.classList.contains(
+                      "reveal"
+                    )
+                );
+
+
+              const index =
+                siblings.indexOf(el);
+
+
+              const delay =
+                Math.min(
+                  index,
+                  6
+                ) * 140;
+
+
+              setTimeout(
+                () =>
+                  el.classList.add(
+                    "in-view"
+                  ),
+                delay
+              );
+
+
+              observer.unobserve(
+                el
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.12,
+        rootMargin:
+          "0px 0px -40px 0px"
+      }
+    );
+
+
+  items.forEach(
+    el =>
+      observer.observe(el)
+  );
+
+}
+
+
+/* ---------------------------------------------------------------------
+   14. HERO ENTRANCE
+   --------------------------------------------------------------------- */
 
 function initHeroEntrance() {
-  const hero = document.querySelector(".hero .container");
-  if (hero) requestAnimationFrame(() => hero.classList.add("in-view"));
+
+  const hero =
+    document.querySelector(
+      ".hero .container"
+    );
+
+
+  if (hero) {
+
+    requestAnimationFrame(
+      () =>
+        hero.classList.add(
+          "in-view"
+        )
+    );
+
+  }
+
 }
+
 
 /* ---------------------------------------------------------------------
    INIT
    --------------------------------------------------------------------- */
-document.addEventListener("DOMContentLoaded", () => {
-  renderPricing();
-  initForm();
-  initCtaTracking();
-  initStickyCta();
-  initScrollReveal();
-  initHeroEntrance();
-});
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    renderPricing();
+
+    initForm();
+
+    initCtaTracking();
+
+    initStickyCta();
+
+    initScrollReveal();
+
+    initHeroEntrance();
+
+  }
+);
 
 </script>
+
 </body>
 </html>
