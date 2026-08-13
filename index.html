@@ -1022,22 +1022,72 @@ fbq('track', 'PageView');
 
       <div class="field">
         <label for="package">Select Your Package <span class="req">*</span></label>
+      
         <select id="package" name="package" required>
           <option value="" disabled selected>Choose package quantity...</option>
         </select>
+      
         <span class="field-error">Please select a package.</span>
       </div>
-
+      
+      
       <div class="field">
         <label for="fullName">Full Name <span class="req">*</span></label>
-        <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="Enter Fullname" required>
+      
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          autocomplete="name"
+          placeholder="Enter Fullname"
+          required
+        >
+      
         <span class="field-error">Please enter your full name.</span>
       </div>
-
+      
+      
       <div class="field">
         <label for="phone">Phone Number <span class="req">*</span></label>
-        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="08012345678" required>
+      
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          autocomplete="tel"
+          placeholder="08012345678"
+          required
+        >
+      
         <span class="field-error">Enter a valid Nigerian phone number.</span>
+      </div>
+      
+      
+      <div class="field">
+        <label for="whatsapp">WhatsApp Number (Optional)</label>
+      
+        <input
+          type="tel"
+          id="whatsapp"
+          name="whatsapp"
+          autocomplete="tel"
+          placeholder="08012345678 (for WhatsApp updates)"
+        >
+      </div>
+      
+      
+      <div class="field">
+        <label for="address">Delivery Address <span class="req">*</span></label>
+      
+        <textarea
+          id="address"
+          name="address"
+          rows="3"
+          placeholder="Include a landmark if possible"
+          required
+        ></textarea>
+      
+        <span class="field-error">Please enter your delivery address.</span>
       </div>
 
       <div class="field">
