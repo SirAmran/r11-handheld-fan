@@ -1018,7 +1018,7 @@ fbq('track', 'PageView');
     <form class="order-form reveal" id="order-form" name="r11-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="r11-order">
       <input type="hidden" name="orderReference" id="orderReference" value="">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <p style="position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px;margin:0;padding:0;"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
       <div class="field">
         <label for="package">Select Your Package <span class="req">*</span></label>
@@ -1307,16 +1307,18 @@ async function submitOrder(form) {
         keepalive: true
       });
 
-      // BACKUP: also keep Netlify Forms receiving the same order.
-      const netlifyRequest = fetch(window.location.pathname, {
+      // BACKUP: send the same submission to Netlify Forms.
+      // The deployed HTML form is also marked data-netlify="true" so Netlify
+      // can detect the form during the build.
+      const netlifyRequest = fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
         body: encoded,
         keepalive: true
       });
 
-      // Do not make a Netlify failure prevent the customer from completing an
-      // order that was already sent to Google Apps Script.
+      // Wait for both network requests to be dispatched. The Apps Script
+      // request uses no-cors, so its response cannot be inspected here.
       await Promise.allSettled([appsScriptRequest, netlifyRequest]);
     }
 
