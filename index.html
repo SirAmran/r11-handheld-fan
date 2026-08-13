@@ -26,15 +26,15 @@
 <meta name="theme-color" content="#0B4F6C">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://mistfans.yoyosdevices.com.ng/">
+<link rel="canonical" href="https://r11fans.yoyosdevices.com.ng/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="R11 Handheld Fan in Nigeria | YOYOS DEVICES">
 <meta property="og:description" content="Rechargeable R11 handheld fan for home, office, travel and outdoor use. Pay on delivery.">
-<meta property="og:url" content="https://mistfans.yoyosdevices.com.ng/">
+<meta property="og:url" content="https://r11fans.yoyosdevices.com.ng/">
 <meta property="og:site_name" content="YOYOS DEVICES">
-<meta property="og:image" content="https://mistfans.yoyosdevices.com.ng/images/r11-main.webp">
+<meta property="og:image" content="https://r11fans.yoyosdevices.com.ng/images/r11-main.webp">
 <meta property="og:image:alt" content="R11 Handheld Fan">
 <meta property="og:locale" content="en_NG">
 
@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="R11 Handheld Fan in Nigeria | YOYOS DEVICES">
 <meta name="twitter:description" content="Rechargeable R11 handheld fan for personal cooling at home, in the office or outdoors.">
-<meta name="twitter:image" content="https://mistfans.yoyosdevices.com.ng/images/r11-main.webp">
+<meta name="twitter:image" content="https://r11fans.yoyosdevices.com.ng/images/r11-main.webp">
 
 <!-- Structured data: Organization + WebSite + Product -->
 <script type="application/ld+json">
@@ -51,28 +51,28 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://mistfans.yoyosdevices.com.ng/#organization",
+      "@id": "https://r11fans.yoyosdevices.com.ng/#organization",
       "name": "YOYOS DEVICES",
-      "url": "https://mistfans.yoyosdevices.com.ng/"
+      "url": "https://r11fans.yoyosdevices.com.ng/"
     },
     {
       "@type": "WebSite",
-      "@id": "https://mistfans.yoyosdevices.com.ng/#website",
-      "url": "https://mistfans.yoyosdevices.com.ng/",
+      "@id": "https://r11fans.yoyosdevices.com.ng/#website",
+      "url": "https://r11fans.yoyosdevices.com.ng/",
       "name": "YOYOS DEVICES — R11 Handheld Fan",
       "publisher": {
-        "@id": "https://mistfans.yoyosdevices.com.ng/#organization"
+        "@id": "https://r11fans.yoyosdevices.com.ng/#organization"
       },
       "inLanguage": "en-NG"
     },
     {
       "@type": "Product",
-      "@id": "https://mistfans.yoyosdevices.com.ng/#product",
+      "@id": "https://r11fans.yoyosdevices.com.ng/#product",
       "name": "R11 Handheld Fan",
       "description": "Rechargeable handheld fan for personal cooling at home, in the office, while travelling or outdoors.",
       "image": [
-        "https://mistfans.yoyosdevices.com.ng/images/r11-main.webp",
-        "https://mistfans.yoyosdevices.com.ng/images/r11-controls.webp"
+        "https://r11fans.yoyosdevices.com.ng/images/r11-main.webp",
+        "https://r11fans.yoyosdevices.com.ng/images/r11-controls.webp"
       ],
       "brand": {
         "@type": "Brand",
@@ -85,7 +85,7 @@
         "highPrice": "30000",
         "offerCount": "3",
         "availability": "https://schema.org/InStock",
-        "url": "https://mistfans.yoyosdevices.com.ng/#pricing"
+        "url": "https://r11fans.yoyosdevices.com.ng/#pricing"
       }
     }
   ]
@@ -1041,11 +1041,6 @@ fbq('track', 'PageView');
       </div>
 
       <div class="field">
-        <label for="whatsapp">WhatsApp Number (Optional)</label>
-        <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" placeholder="e-g 080******** (for order updates)">
-      </div>
-
-      <div class="field">
         <label for="address">Delivery Address <span class="req">*</span></label>
         <textarea id="address" name="address" rows="3" placeholder="Include a landmark if possible" required></textarea>
         <span class="field-error">Please enter your delivery address.</span>
@@ -1058,7 +1053,7 @@ fbq('track', 'PageView');
 
       <div class="notice-box">
         <span class="notice-icon">⚠️</span>
-        <p><strong>Important:</strong> Submitting this form places a real order. Our team will contact you by phone or WhatsApp to confirm delivery. Payment is on delivery (COD).</p>
+        <p><strong>Important:</strong> Submitting this form places a real order. Our team will contact you by phone to confirm delivery. Payment is on delivery (COD).</p>
       </div>
 
       <label class="confirm-box">
@@ -1087,7 +1082,7 @@ fbq('track', 'PageView');
       </div>
 
       <div class="success-tip">
-        <span>✓</span> Keep your phone reachable — we'll call or WhatsApp you to confirm your address before dispatch.
+        <span>✓</span> Keep your phone reachable — we'll call you to confirm your address before dispatch.
       </div>
 
       <button type="button" class="btn btn-block success-done" id="success-done">Done</button>
@@ -1108,7 +1103,7 @@ fbq('track', 'PageView');
 <!-- ============================== FOOTER ============================== -->
 <footer class="site-footer">
   <div class="container">
-    <p>YOYOS DEVICES &middot; <a href="learn-more.html">Learn More</a> &middot; WhatsApp: WHATSAPP_NUMBER_HERE</p>
+    <p>YOYOS DEVICES &middot; <a href="learn-more.html">Learn More</a></p>
   </div>
 </footer>
 
@@ -1136,13 +1131,13 @@ const PRODUCT = {
   ]
 };
 
-/* Dev-mode mock submission — set to false once ORDER_API_ENDPOINT is live */
+/* Dev-mode mock submission — keep false for the live Google Apps Script endpoint */
 const MOCK_SUBMIT_MODE = false;
 /* ---------------------------------------------------------------------
    2. ORDER API ENDPOINT — insert real backend endpoint here if/when
       moving beyond Netlify Forms (currently unused; form posts natively)
    --------------------------------------------------------------------- */
-const ORDER_API_ENDPOINT = "ORDER_API_ENDPOINT_HERE";
+const ORDER_API_ENDPOINT = "https://script.google.com/macros/s/AKfycbyJWAhSmXaaHS5H6i-eZDEMzIPkx8g2RfJa-l02cqyC7NKG4NLfeWndqAqqFkmyCH1N/exec";
 
 function nairaFormat(n) {
   return "₦" + n.toLocaleString("en-NG");
@@ -1230,10 +1225,6 @@ function validateForm(form) {
   if (!isValidNGPhone(phone.value.trim())) { setFieldError(phone, true); valid = false; }
   else setFieldError(phone, false);
 
-  const whatsapp = form.querySelector("#whatsapp");
-  if (whatsapp.value.trim() && !isValidNGPhone(whatsapp.value.trim())) { setFieldError(whatsapp, true); valid = false; }
-  else setFieldError(whatsapp, false);
-
   const address = form.querySelector("#address");
   if (!address.value.trim()) { setFieldError(address, true); valid = false; }
   else setFieldError(address, false);
@@ -1299,29 +1290,42 @@ async function submitOrder(form) {
   document.getElementById("orderReference").value = reference;
 
   const formData = new FormData(form);
+  const encoded = new URLSearchParams(formData).toString();
 
   try {
     if (MOCK_SUBMIT_MODE) {
-      // DEV MODE — simulates a network call. Replace with real submission
-      // (e.g. Netlify's native form POST, or fetch(ORDER_API_ENDPOINT, ...))
-      // before going live if bypassing Netlify's native form handling.
       await new Promise(resolve => setTimeout(resolve, 900));
-      trackEvent("Lead", { content_name: PRODUCT.name });
-      trackEvent("Purchase", { content_name: PRODUCT.name, currency: "NGN" });
-      showOrderSuccess(form, reference);
     } else {
-      const response = await fetch(form.action || window.location.pathname, {
+      // PRIMARY: send the order directly to the new Google Apps Script /exec endpoint.
+      // no-cors is intentional because Apps Script web apps may not expose a
+      // browser-readable CORS response even though the POST is received.
+      const appsScriptRequest = fetch(ORDER_API_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: encoded,
+        keepalive: true
       });
-      if (!response.ok) throw new Error("Submission failed");
-      trackEvent("Lead", { content_name: PRODUCT.name });
-      trackEvent("Purchase", { content_name: PRODUCT.name, currency: "NGN" });
-      showOrderSuccess(form, reference);
+
+      // BACKUP: also keep Netlify Forms receiving the same order.
+      const netlifyRequest = fetch(window.location.pathname, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: encoded,
+        keepalive: true
+      });
+
+      // Do not make a Netlify failure prevent the customer from completing an
+      // order that was already sent to Google Apps Script.
+      await Promise.allSettled([appsScriptRequest, netlifyRequest]);
     }
+
+    trackEvent("Lead", { content_name: PRODUCT.name });
+    trackEvent("Purchase", { content_name: PRODUCT.name, currency: "NGN" });
+    showOrderSuccess(form, reference);
   } catch (err) {
-    setStatus("Something went wrong. Please try again or WhatsApp us.", "error");
+    console.error("Order submission error:", err);
+    setStatus("Something went wrong. Please try again.", "error");
   } finally {
     submitBtn.disabled = false;
   }
